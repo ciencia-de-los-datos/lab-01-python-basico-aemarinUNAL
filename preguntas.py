@@ -19,7 +19,7 @@ with fileinput.input(files=filename, encoding='utf-8') as f:
         lines.append(line.split())
 
 
-def pregunta_01(lines):
+def pregunta_01():
     """
     Retorne la suma de la segunda columna.
 
@@ -32,7 +32,7 @@ def pregunta_01(lines):
     return suma
 
 
-def pregunta_02(lines):
+def pregunta_02():
     """
     Retorne la cantidad de registros por cada letra de la primera columna como la lista
     de tuplas (letra, cantidad), ordendas alfabéticamente.
@@ -56,7 +56,7 @@ def pregunta_02(lines):
     return sorted(letter_count.items())
 
 
-def pregunta_03(lines):
+def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
@@ -81,7 +81,7 @@ def pregunta_03(lines):
     return sorted(suma_letra.items())
 
 
-def pregunta_04(lines):
+def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
     registros por cada mes, tal como se muestra a continuación.
@@ -112,7 +112,7 @@ def pregunta_04(lines):
     return sorted(month_count.items())
 
 
-def pregunta_05(lines):
+def pregunta_05():
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
     letra de la columa 1.
@@ -139,7 +139,7 @@ def pregunta_05(lines):
     return sorted([(keys, values[0], values[1]) for keys, values in letter_values.items()])
 
 
-def pregunta_06(lines):
+def pregunta_06():
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
     una clave y el valor despues del caracter `:` corresponde al valor asociado a la
@@ -175,7 +175,7 @@ def pregunta_06(lines):
     return sorted([(key, values['min'], values['max']) for key, values in values_letter.items()])
 
 
-def pregunta_07(lines):
+def pregunta_07():
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -208,7 +208,7 @@ def pregunta_07(lines):
     return sorted(list_value_key)
 
 
-def pregunta_08(lines):
+def pregunta_08():
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
     de la segunda columna; la segunda parte de la tupla es una lista con las letras
@@ -241,7 +241,7 @@ def pregunta_08(lines):
     return sorted([(num, sorted(list(letter))) for num, letter in values_letters.items()], key=lambda x: x[0])
 
 
-def pregunta_09(lines):
+def pregunta_09():
     """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
     clave de la columna 5.
@@ -273,7 +273,7 @@ def pregunta_09(lines):
     return key_count
 
 
-def pregunta_10(lines):
+def pregunta_10():
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
     cantidad de elementos de las columnas 4 y 5.
@@ -298,7 +298,7 @@ def pregunta_10(lines):
     return listado
 
 
-def pregunta_11(lines):
+def pregunta_11():
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -327,7 +327,7 @@ def pregunta_11(lines):
     return {letter: suma for letter, suma in sorted(suma_por_letra.items())}
 
 
-def pregunta_12(lines):
+def pregunta_12():
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor la suma de
     los valores de la columna 5 sobre todo el archivo.
