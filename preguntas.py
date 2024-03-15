@@ -127,16 +127,16 @@ def pregunta_05():
     ]
     """
     letter_values = {}
-    
     for l in lines:
         letter = l[0]
         num = int(l[1])
         
-        if letter in letter_values:
-            letter_values[letter] = (max(letter_values[letter][0], num), min(letter_values[letter][0], num))
+        if letter not in letter_values:
+            letter_values[letter] = {"max": num, "min": num}
         else:
-            letter_values[letter] = (num, num)
-    return sorted([(keys, values[0], values[1]) for keys, values in letter_values.items()])
+            letter_values[letter]['max'] = max(letter_values[letter]['max'], num)
+            letter_values[letter]['min'] = min(letter_values[letter]['min'], num)
+    return sorted([(letter, values['max'], values['min']) for letter, values in letter_values.items()])
 
 
 def pregunta_06():
